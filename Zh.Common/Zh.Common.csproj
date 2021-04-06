@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ApiResponse\ResPagingModel`1.cs" />
+    <Compile Remove="ApiResponse\ResponsePagingModel`1.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="epplus" Version="4.5.3" />
+    <PackageReference Include="JWT" Version="4.0.0" />
+    <PackageReference Include="oracle.manageddataaccess.core" Version="2.18.3" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+  </ItemGroup>
+
+</Project>

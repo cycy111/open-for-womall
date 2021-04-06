@@ -1,0 +1,2131 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TmsOpenForWoMall</name>
+    </assembly>
+    <members>
+        <member name="T:WmsReport.Controllers.UnionController">
+             <summary>
+            向联通提供的接口
+             </summary>
+        </member>
+        <member name="M:WmsReport.Controllers.UnionController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.Extensions.Logging.ILogger{WmsReport.Controllers.UnionController},Microsoft.AspNetCore.Http.IHttpContextAccessor,TmsOpenForWoMall.Domain.IServices.IUnionService,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="configuration"></param>
+            <param name="logger">日志</param>
+            <param name="httpContextAccessor">请求上下文</param>
+            <param name="iunion">盘点接口</param>
+            <param name="hostingEnvironment">根目录类</param>
+        </member>
+        <member name="M:WmsReport.Controllers.UnionController.GetToken(ProvideForUnionAPI.Dto.Request.ReqTokenDto)">
+            <summary>
+            获取Access Token
+            </summary>
+            <param name="reqToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WmsReport.Controllers.UnionController.getOrderPushMsg(TmsOpenForWoMall.Dto.Request.Union.ReqPushMsgDto)">
+            <summary>
+            业务 
+            </summary>
+            <param name="pushMsgDto"></param>
+            <returns></returns>[HttpPost]
+        </member>
+        <member name="M:WmsReport.Controllers.UnionController.CheckAuthorize(System.String)">
+            <summary>
+            验证权限 
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WmsReport.Dto.Request.Check.GetAccountReport">
+            <summary>
+            对账报表
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetAccountReport.accountNo">
+            <summary>
+            盘点单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetAccountReport.deptCode">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetAccountReport.beginTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetAccountReport.endTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetAccountReport.accountType">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Request.Check.GetCheckReport">
+            <summary>
+            获取盘点报表明细 
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetCheckReport.checkNo">
+            <summary>
+            盘点单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetCheckReport.checkType">
+            <summary>
+            盘点类型
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetCheckReport.deptCode">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetCheckReport.beginTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetCheckReport.endTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Request.Check.GetInventoryFlow">
+            <summary>
+            获取库存流水明细
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetInventoryFlow.docentry">
+            <summary>
+            来源单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetInventoryFlow.productCode">
+            <summary>
+            物资编码
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetInventoryFlow.productName">
+            <summary>
+            物资名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetInventoryFlow.productType">
+            <summary>
+            物资类别
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetInventoryFlow.orderType">
+            <summary>
+            单据类型
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetInventoryFlow.deptCode">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetInventoryFlow.beginTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetInventoryFlow.endTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Request.Check.GetUnOverCheckNo">
+            <summary>
+            获取未完成的盘点单
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetUnOverCheckNo.deptCode">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetUnOverCheckNo.userId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Request.Check.GetWmsList">
+            <summary>
+            获取wms数据统计明细
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetWmsList.area">
+            <summary>
+            区域
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetWmsList.deptCode">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetWmsList.beginTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetWmsList.endTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.GetWmsList.userName">
+            <summary>
+            账号名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.ReqApplyDocDto.deptCode">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.ReqApplyDocDto.outCode">
+            <summary>
+            系统单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.ReqCheckflowDto.deptCode">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.ReqCheckflowDto.outCode">
+            <summary>
+            出库单号
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Request.Check.ReqCheckTask">
+            <summary>
+            新增抽盘盘点单
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.ReqCheckTask.deptCode">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.ReqCheckTask.area">
+            <summary>
+            区域
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.ReqCheckTask.productNum">
+            <summary>
+            物资数量
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.ReqCheckTask.addType">
+            <summary>
+            盘点生成类型 1.物资 2.箱号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.ReqLeaderCheckDto.deptCode">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.ReqLeaderCheckDto.outCode">
+            <summary>
+            系统单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.ReqLeaderCheckDto.actionType">
+            <summary>
+            审批类型(1:同意; 0:驳回)
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.ReqLeaderCheckDto.CheckSugest">
+            <summary>
+            审批意见
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.ReqLeaderCheckDto.checkerUser">
+            <summary>
+            审核人
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.ReqUrgecOutDocsDto.checkName">
+            <summary>
+            审核人
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.ReqUrgecOutDocsDto.applyName">
+            <summary>
+            申请人
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.ReqUrgecOutDocsDto.deptCode">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.ReqUrgecOutDocsDto.checkStatus">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.ReqUrgecOutDocsDto.pageSize">
+            <summary>
+            页大小
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.ReqUrgecOutDocsDto.pageIndex">
+            <summary>
+            页索引
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Request.Check.UpCheckList">
+            <summary>
+            更新盘点单信息
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.UpCheckList.checkNo">
+            <summary>
+            盘点单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.UpCheckList.deptCode">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.UpCheckList.dt">
+            <summary>
+            盘点明细
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Request.Check.UpCheckList.userId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Response.Check.AccountReport">
+            <summary>
+            对账报表
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.AccountReport.accountNo">
+            <summary>
+            盘点单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.AccountReport.deptCode">
+            <summary>
+            部门编码
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.AccountReport.createDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.AccountReport.creator">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Response.Check.AccountReportDt">
+            <summary>
+            对账明细
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.AccountReportDt.productCode">
+            <summary>
+            物资编码
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.AccountReportDt.productName">
+            <summary>
+            物资名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.AccountReportDt.projectCode">
+            <summary>
+            项目编码
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.AccountReportDt.projectName">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.AccountReportDt.WMSQty">
+            <summary>
+            仓库数据
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.AccountReportDt.YDQty">
+            <summary>
+            移动数量
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.AccountReportDt.difQty">
+            <summary>
+            数量差异
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.AccountReportDt.supName">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.AccountReportDt.cgdid">
+            <summary>
+            采购单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.AccountReportDt.packCode">
+            <summary>
+            箱号
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Response.Check.CheckReport">
+            <summary>
+            盘点报告
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckReport.CheckNo">
+            <summary>
+            盘点单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckReport.deptName">
+            <summary>
+            部门名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckReport.checkType">
+            <summary>
+            盘点类型
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckReport.createDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Response.Check.CheckReportDt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckReportDt.ProductCode">
+            <summary>
+            物资编码
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckReportDt.ProductName">
+            <summary>
+            物资名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckReportDt.Location">
+            <summary>
+            储位
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckReportDt.KcQty">
+            <summary>
+            账目库存
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckReportDt.checkQty">
+            <summary>
+            盘点数量
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckReportDt.difQty">
+            <summary>
+            差异数量
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Response.Check.CheckTask">
+            <summary>
+            盘点任务
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckTask.checkNo">
+            <summary>
+            盘点单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckTask.addType">
+            <summary>
+            盘点类型
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckTask.deptName">
+            <summary>
+            部门名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckTask.isSame">
+            <summary>
+            是否账实一致
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckTask.checkStatus">
+            <summary>
+            盘点状态
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckTask.location">
+            <summary>
+            储位
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckTask.creatorName">
+            <summary>
+            创建人名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckTask.createDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckTask.sendDate">
+            <summary>
+            推送时间
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Response.Check.CheckTaskDt">
+            <summary>
+            盘点明细
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckTaskDt.cid">
+            <summary>
+            主键Id
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckTaskDt.checkNo">
+            <summary>
+            盘点单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckTaskDt.productCode">
+            <summary>
+            物资编码
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckTaskDt.productName">
+            <summary>
+            物资名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckTaskDt.location">
+            <summary>
+            储位
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckTaskDt.kcQty">
+            <summary>
+            账目库存
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckTaskDt.checkQty">
+            <summary>
+            盘点数量
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.CheckTaskDt.difQty">
+            <summary>
+            差异数量
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Response.Check.InventoryFlow">
+            <summary>
+            库存流水明细
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.InventoryFlow.DocEntry">
+            <summary>
+            来源单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.InventoryFlow.productCode">
+            <summary>
+            物资编码
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.InventoryFlow.productName">
+            <summary>
+            物资名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.InventoryFlow.Project">
+            <summary>
+            项目
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.InventoryFlow.ProductUnit">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.InventoryFlow.orderType">
+            <summary>
+            单类型
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.InventoryFlow.SupName">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.InventoryFlow.ProductType">
+            <summary>
+            物资类别
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.InventoryFlow.CreateDate">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.InventoryFlow.InOrganize">
+            <summary>
+            库存组织
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.InventoryFlow.Qty">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Response.Check.MessageEntity">
+            <summary>
+            短信实体类
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.MessageEntity.phoneNumbers">
+            <summary>
+            短信接收人号码
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.MessageEntity.signName">
+            <summary>
+            签名
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.MessageEntity.userName">
+            <summary>
+            用户名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.MessageEntity.templateCode">
+            <summary>
+            模板code
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.MessageEntity.templateParam">
+            <summary>
+            参数
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Response.Check.ResApplyDocDto">
+            <summary>
+            申请单
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Response.Check.ResApplyDocTitle">
+            <summary>
+            申请单表头
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.RecPhone">
+            <summary>
+            收货人电话
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.DocEntry">
+            <summary>
+            出库单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.DocDate">
+            <summary>
+            单据日期
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.OutType">
+            <summary>
+            出库类型
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.ApplyID">
+            <summary>
+            申领单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.AssCode">
+            <summary>
+            移动出库单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.OutOrz">
+            <summary>
+            发料组织
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.ProductType">
+            <summary>
+            物资类别
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.DliveryType">
+            <summary>
+            配送方式
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.DmadDept">
+            <summary>
+            需求部门
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.DliveryDate">
+            <summary>
+            预约提货时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.ProjectCode">
+            <summary>
+            领用项目编号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.ProjectName">
+            <summary>
+            领用项目名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.DliveryUser">
+            <summary>
+            提货人
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.DliveryPhone">
+            <summary>
+            提货人电话
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.EnComCode">
+            <summary>
+            施工单位编号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.EnComName">
+            <summary>
+            施工单位名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.OutStatus">
+            <summary>
+            出库状态
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.LedCheckStatus">
+            <summary>
+            领导审核状态
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.IsSendMessage">
+            <summary>
+            发送短信
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocTitle.IsPDA">
+            <summary>
+            是否走PDA
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Response.Check.ResApplyDocDetl">
+            <summary>
+            申请单明细
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.KcQty">
+            <summary>
+            可用库存
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.Amount">
+            <summary>
+            金额
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.CGDID">
+            <summary>
+            采购单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.DateBcTm">
+            <summary>
+            追溯时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.PackagingType">
+            <summary>
+            包装类型
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.PackCode">
+            <summary>
+            箱号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.PackingCode">
+            <summary>
+            装箱单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.PartQty">
+            <summary>
+            申请数量
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.Price">
+            <summary>
+            单价
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.ProductCode">
+            <summary>
+            物资编号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.ProductName">
+            <summary>
+            物资名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.ProductType">
+            <summary>
+            物资类别
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.Location">
+            <summary>
+            储位
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.MappingCode">
+            <summary>
+            映射编码
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.MappingName">
+            <summary>
+            映射名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.MaterialSname">
+            <summary>
+            物资简称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.ProductUnit">
+            <summary>
+            库存单位
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.ProjectCode">
+            <summary>
+            库存项目编号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.ProjectName">
+            <summary>
+            库存项目名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.ProSeqno">
+            <summary>
+            物资批次
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.PurchaseCode">
+            <summary>
+            关联单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.Remark">
+            <summary>
+            出库备注
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.SpcModel">
+            <summary>
+            规格
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.SupName">
+            <summary>
+            供应商名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.Supplier">
+            <summary>
+            供应商
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.TotalWeight">
+            <summary>
+            重量(t)
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.UndeQty">
+            <summary>
+            本次领用数量
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.Volume">
+            <summary>
+            标准体积（m³）
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.Weight">
+            <summary>
+            标准重量(kg)
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.WhCode">
+            <summary>
+            仓库
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.ZsDate">
+            <summary>
+            闲置天数
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResApplyDocDetl.LedgerName">
+            <summary>
+            对应台账名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckflowDto.Operate">
+            <summary>
+            操作
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckflowDto.CreateDate">
+            <summary>
+            操作时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckflowDto.Operator">
+            <summary>
+            操作人
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckflowDto.Sugest">
+            <summary>
+            审批意见
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Response.Check.ResCheckTask">
+            <summary>
+            抽盘盘点单
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.checkNo">
+            <summary>
+            盘点单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.deptCode">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.deptName">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.ProductCode">
+            <summary>
+            物资编码
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.ProductName">
+            <summary>
+            物资名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.projectname">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.ProductUnit">
+            <summary>
+            单位
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.Location">
+            <summary>
+            储位
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.KcQty">
+            <summary>
+            账目库存
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.checkQty">
+            <summary>
+            盘点数量
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.difQty">
+            <summary>
+            差异数量
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.isSame">
+            <summary>
+            是否账实一致
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.checkStatus">
+            <summary>
+            盘点状态
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.checkUser">
+            <summary>
+            盘点人
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.checkDate">
+            <summary>
+            盘点时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.creator">
+            <summary>
+            创建人
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.createDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.creatorName">
+            <summary>
+            创建者的姓名
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.sender">
+            <summary>
+            推送人
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.sendDate">
+            <summary>
+            推送时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.overDate">
+            <summary>
+            超时时间(推送时间 + 1小时)
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTask.cid">
+            <summary>
+            主键Id
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Response.Check.ResCheckTaskDt">
+            <summary>
+            盘点单明细
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTaskDt.Cid">
+            <summary>
+            主键Id
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTaskDt.ProductCode">
+            <summary>
+            物资编码
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTaskDt.ProductName">
+            <summary>
+            物资名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTaskDt.Location">
+            <summary>
+            储位
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTaskDt.KcQty">
+            <summary>
+            账目库存
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTaskDt.checkQty">
+            <summary>
+            盘点数量
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTaskDt.difQty">
+            <summary>
+            差异数量
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTaskDt.isSame">
+            <summary>
+            是否账实一致
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResCheckTaskDt.checkStatus">
+            <summary>
+            盘点状态
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResUrgecOutDocsDto.rid">
+            <summary>
+            序号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResUrgecOutDocsDto.outCode">
+            <summary>
+            系统单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResUrgecOutDocsDto.checkName">
+            <summary>
+            审核人
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResUrgecOutDocsDto.createDate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResUrgecOutDocsDto.applyName">
+            <summary>
+            申请人
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResUrgecOutDocsDto.outStatus">
+            <summary>
+            出库状态
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResUrgecOutDocsDto.ledCheckStatus">
+            <summary>
+            单据状态
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResUrgecOutDocsDto.outType">
+            <summary>
+            出库类型
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResUrgecOutDocsDto.productType">
+            <summary>
+            物资类别
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResUrgecOutDocsDto.projectCode">
+            <summary>
+            项目编号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResUrgecOutDocsDto.projectName">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.ResUrgecOutDocsDto.dptName">
+            <summary>
+            需求部门
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Response.Check.UnOverCheckNo">
+            <summary>
+            未完成的盘点单
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.UnOverCheckNo.checkNo">
+            <summary>
+            盘点单号
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.UnOverCheckNo.checkstatus">
+            <summary>
+            盘点状态
+            </summary>
+        </member>
+        <member name="T:WmsReport.Dto.Response.Check.WmsAllList">
+            <summary>
+            wms汇总数据
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.WmsAllList.deptCode">
+            <summary>
+            部门
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.WmsAllList.locCount">
+            <summary>
+            总储位数
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.WmsAllList.resCount">
+            <summary>
+            已用储位数
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.WmsAllList.locRate">
+            <summary>
+            储位使用率
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.WmsAllList.dCheckCount">
+            <summary>
+            日盘点数
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.WmsAllList.lastCheckDay">
+            <summary>
+            最近日盘点时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.WmsAllList.lastCheckMonth">
+            <summary>
+            最近月盘点时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.WmsAllList.lastCheckRandom">
+            <summary>
+            最近抽盘时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.WmsAllList.inQty">
+            <summary>
+            入库数量
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.WmsAllList.outQty">
+            <summary>
+            出库数量
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.WmsAllList.lastResTime">
+            <summary>
+            最近入库时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.WmsAllList.lastOutTime">
+            <summary>
+            最近出库时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.WmsAllList.lastAcountTime">
+            <summary>
+            最近对账时间
+            </summary>
+        </member>
+        <member name="P:WmsReport.Dto.Response.Check.WmsAllList.acountCount">
+            <summary>
+            对账数量
+            </summary>
+        </member>
+        <member name="T:WmsReport.Infrastructure.Config.CommonHelper">
+            <summary>
+            公共方法
+            </summary>
+        </member>
+        <member name="M:WmsReport.Infrastructure.Config.CommonHelper.HttpPost(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String},System.String,System.Int32,System.Text.Encoding)">
+            <summary>
+            同步POST请求
+            </summary>
+            <param name="url"></param>
+            <param name="postData"></param>
+            <param name="headers"></param>
+            <param name="contentType"></param>
+            <param name="timeout">请求响应超时时间，单位/s(默认100秒)</param>
+            <param name="encoding">默认UTF8</param>
+            <returns></returns>
+        </member>
+        <member name="M:WmsReport.Infrastructure.Config.CommonHelper.SendMail">
+            <summary>
+            发邮件功能
+            </summary>
+        </member>
+        <member name="M:WmsReport.Infrastructure.Config.DapperHelper`1.#ctor(WmsReport.Infrastructure.DbCommon.IWmsDbConnection)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="wmsDbConnection"></param>
+        </member>
+        <member name="M:WmsReport.Infrastructure.Config.DapperHelper`1.Query(System.String,System.Object)">
+            <summary>
+            查询列表
+            </summary>
+            <param name="sql">查询的sql</param>
+            <param name="param">替换参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:WmsReport.Infrastructure.Config.DapperHelper`1.Execute(System.String,System.Object)">
+            <summary>
+            增删改
+            </summary>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WmsReport.Infrastructure.Config.DapperHelper`1.ExecuteReader(System.String,System.Object)">
+            <summary>
+            Reader获取数据
+            </summary>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WmsReport.Infrastructure.Config.DapperHelper`1.ExecuteScalar(System.String,System.Object)">
+            <summary>
+            Scalar获取数据
+            </summary>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WmsReport.Infrastructure.Config.DapperHelper`1.ExecuteScalarForT(System.String,System.Object)">
+            <summary>
+            Scalar获取数据
+            </summary>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WmsReport.Infrastructure.Config.DapperHelper`1.ExecutePro(System.String,System.Object)">
+            <summary>
+            带参数的存储过程
+            </summary>
+            <param name="sql"></param>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WmsReport.Infrastructure.Config.DapperHelper`1.ExecuteTransaction(System.String[])">
+            <summary>
+            事务1 - 全SQL
+            </summary>
+            <param name="sqlarr">多条SQL</param>
+            <param name="param">param</param>
+            <returns></returns>
+        </member>
+        <member name="M:WmsReport.Infrastructure.Config.DapperHelper`1.ExecuteTransaction(System.Collections.Generic.Dictionary{System.String,System.Object})">
+             <summary>
+             事务2 - 声明参数
+            demo:
+            dic.Add("Insert into Users values (@UserName, @Email, @Address)",
+                    new { UserName = "jack", Email = "380234234@qq.com", Address = "上海" });
+             </summary>
+             <param name="Key">多条SQL</param>
+             <param name="Value">param</param>
+             <returns></returns>
+        </member>
+        <member name="T:WmsReport.Infrastructure.Config.DbConnections">
+            <summary>
+            数据库连接配置映射类
+            </summary>
+        </member>
+        <member name="P:WmsReport.Infrastructure.Config.DbConnections.WMSReport">
+            <summary>
+            WMSReport数据库
+            </summary>
+        </member>
+        <member name="P:WmsReport.Infrastructure.Config.DbConnections.AccountCenter">
+            <summary>
+            tms数据库
+            </summary>
+        </member>
+        <member name="P:WmsReport.Infrastructure.Config.DbConnections.wmsDb">
+            <summary>
+            数据库集合
+            </summary>
+        </member>
+        <member name="P:WmsReport.Infrastructure.Config.DbConnections.UnionDb">
+            <summary>
+            联通商场数据库
+            </summary>
+        </member>
+        <member name="T:WmsReport.Infrastructure.Config.WmsDb">
+            <summary>
+            wms数据库连接配置映射类
+            </summary>
+        </member>
+        <member name="T:WmsReport.Infrastructure.Config.Echart">
+            <summary>
+            曲线图基础配置
+            </summary>
+        </member>
+        <member name="P:WmsReport.Infrastructure.Config.Echart.title">
+            <summary>
+            标题
+            </summary>
+        </member>
+        <member name="P:WmsReport.Infrastructure.Config.Echart.model">
+            <summary>
+            标题值
+            </summary>
+        </member>
+        <member name="P:WmsReport.Infrastructure.Config.Echart.xAxis">
+            <summary>
+            x轴
+            </summary>
+        </member>
+        <member name="P:WmsReport.Infrastructure.Config.Echart.series">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="P:WmsReport.Infrastructure.Config.Echart.legend">
+            <summary>
+            图例
+            </summary>
+        </member>
+        <member name="T:WmsReport.Infrastructure.Config.EchartData">
+            <summary>
+            曲线图左边数据
+            </summary>
+        </member>
+        <member name="P:WmsReport.Infrastructure.Config.EchartData.data">
+            <summary>
+            Y值
+            </summary>
+        </member>
+        <member name="P:WmsReport.Infrastructure.Config.EchartData.name">
+            <summary>
+            X值
+            </summary>
+        </member>
+        <member name="P:WmsReport.Infrastructure.Config.EchartData.countType">
+            <summary>
+            类型 1.入库；2出库
+            </summary>
+        </member>
+        <member name="P:WmsReport.Infrastructure.Config.EchartData.datetime">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="T:WmsReport.Infrastructure.SqlServerPackage">
+            <summary>
+            调用SqlServer数据方法
+            </summary>
+        </member>
+        <member name="T:WmsReport.Infrastructure.DbCommon.WmsDbConnection">
+            <summary>
+            在DbConnection基础上再封装一层，实现动态配置数据库链接字符串，以达到访问不能的库
+            </summary>
+        </member>
+        <member name="M:WmsReport.Infrastructure.DbCommon.WmsDbConnection.#ctor(Microsoft.Extensions.Options.IOptionsMonitor{WmsReport.Infrastructure.Config.DbConnections})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dbConnsAccessor"></param>
+        </member>
+        <member name="M:WmsReport.Infrastructure.DbCommon.WmsDbConnection.GetDbConnStr(System.String,System.String)">
+            <summary>
+            根据部门，动态配置访问不同数据库方法
+            </summary>
+            <param name="deptCode"></param>
+            <param name="deptName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WmsReport.Infrastructure.DbCommon.WmsDbConnection.GetOracleConnStr">
+            <summary>
+            根据部门，动态配置访问不同数据库方法
+            </summary>
+            <param name="deptCode"></param>
+            <param name="deptName"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:WmsReport.Infrastructure.Enum.ErrorEnum" -->
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.Success">
+            <summary>
+            执行成功
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.SystemException">
+            <summary>
+            系统异常
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.DescriptException">
+            <summary>
+            描述性异常
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.TokenExpired">
+            <summary>
+            用户已过期
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.ParameterNotEmpty">
+            <summary>
+            参数不能为空
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.SaveFail">
+            <summary>
+            新增失败
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.UpdateFail">
+            <summary>
+            更新失败
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.IsExists">
+            <summary>
+            此编号已存在
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.DelFail">
+            <summary>
+            删除失败
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.FindFail">
+            <summary>
+            查询的项目类型为空
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.IsExistsVersion">
+            <summary>
+            部门对应版本已存在
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.MonReportBaseDateNeed">
+            <summary>
+            请配置月报项目基础数据
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.Unauthorized">
+            <summary>
+            无权限访问
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.IsExistsDepart">
+            <summary>
+            部门已存在
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.ReportItemNotNull">
+            <summary>
+            月报项不能为空
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.NotExistsInCode">
+            <summary>
+            入库单不存在或未审核
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.NotTrayNo">
+            <summary>
+            托盘号不存在
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.IsUsedTray">
+            <summary>
+            托盘号已使用
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.IsExistsLocation">
+            <summary>
+            托盘已存在储位
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.TrayNoNotBind">
+            <summary>
+            托盘未绑定入库单
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.ReBindInCode">
+            <summary>
+            入库单重复绑定
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.NotExistsOutCode">
+            <summary>
+            出库单不存在
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.NotInventory">
+            <summary>
+            库存不足
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.BoxHasChecked">
+            <summary>
+            此箱号已复核
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.UnderStock">
+            <summary>
+            没可用库存
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.BoxHasReceived">
+            <summary>
+            此箱号已收货
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.TrayNotReceived">
+            <summary>
+            此托盘未收货
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.TrayIsUp">
+            <summary>
+            此托盘已上架
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.BoxNotDown">
+            <summary>
+            请将箱号先下架
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.BoxNotExists">
+            <summary>
+            箱号不存在
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.ProductNotDown">
+            <summary>
+            请将物资编号先下架
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.BoxNotExistInventory">
+            <summary>
+            箱号不存在库存中
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.LocationNotExist">
+            <summary>
+            储位号不存在
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.LocationNotExistInventory">
+            <summary>
+            储位号在库存中不存在
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.BoxNoNotExist">
+            <summary>
+            箱号不存在
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.TrayNoNotExist">
+            <summary>
+            托盘号不存在
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.TrayNoNotUp">
+            <summary>
+            托盘号未上架
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.MaterialBarCodeNotExist">
+            <summary>
+            物资条码不存在
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.MaterialNotInTheLocation">
+            <summary>
+            此储位不存在该物资
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.MaterialCodeNotExist">
+            <summary>
+            物资编码不存在
+            </summary>
+        </member>
+        <member name="F:WmsReport.Infrastructure.Enum.ErrorEnum.MaterialBarCodeIsBinded">
+            <summary>
+            物资条码已被绑定
+            </summary>
+        </member>
+        <member name="T:WmsReport.Startup">
+            <summary>
+            配置开始文件
+            </summary>
+        </member>
+        <member name="T:TmsOpenForWoMall.Dal.CheckDal.UnionDal">
+            <summary>
+            联通商场数据访问
+            </summary>
+        </member>
+        <member name="M:TmsOpenForWoMall.Dal.CheckDal.UnionDal.#ctor(TmsOpenForWoMall.Infrastructure.DbCommon.IUnionDbConnection)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="unDbConnection"></param>
+        </member>
+        <member name="M:TmsOpenForWoMall.Dal.CheckDal.UnionDal.GetToken(ProvideForUnionAPI.Dto.Request.ReqTokenDto,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            记录调用获取Access token接口
+            </summary>
+            <param name="reqTokenDto"></param>
+            <param name="httpContext"></param>
+        </member>
+        <member name="M:TmsOpenForWoMall.Dal.CheckDal.UnionDal.GetLogiticOrderByNo(System.String,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            平台根据物流单查询当前物流单的物流配送信息
+            </summary>
+            <param name="orderNo">物流单</param>
+            <param name="httpContext">请求上下文</param>
+            <returns></returns>
+        </member>
+        <member name="M:TmsOpenForWoMall.Dal.CheckDal.UnionDal.getOrderPushMsg(TmsOpenForWoMall.Dto.Request.Union.ReqPushMsgDto,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            推送消息
+            </summary>
+            <param name="addMsg"></param>
+            <param name="httpContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TmsOpenForWoMall.Dal.CheckDal.UnionDal.AddLogiticOrder(TmsOpenForWoMall.Dto.Request.Union.AddMsg,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            推送新增物流订单消息 
+            </summary>
+            <param name="httpContext">请求上下文</param>
+            <param name="addMsg">消息实体</param>
+            <returns></returns>
+        </member>
+        <member name="T:TmsOpenForWoMall.Domain.IServices.IUnionService">
+            <summary>
+            联通商场推送消息接口
+            </summary>
+        </member>
+        <member name="M:TmsOpenForWoMall.Domain.IServices.IUnionService.GetToken(ProvideForUnionAPI.Dto.Request.ReqTokenDto,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            记录调用获取Access token接口
+            </summary>
+            <param name="reqTokenDto"></param>
+            <param name="httpContext"></param>
+        </member>
+        <member name="M:TmsOpenForWoMall.Domain.IServices.IUnionService.getOrderPushMsg(TmsOpenForWoMall.Dto.Request.Union.ReqPushMsgDto,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            推送消息
+            </summary>
+            <param name="reqPushMsgDto">消息实体</param>
+            <param name="httpContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TmsOpenForWoMall.Domain.IServices.IUnionService.GetLogiticOrderByNo(System.String,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            联通商场数据实现方法
+            </summary>
+            <param name="orderNo">物流单号</param>
+            <param name="context">请求上下文</param>
+            <returns></returns>
+        </member>
+        <member name="M:TmsOpenForWoMall.Domain.IServices.IUnionService.AddLogiticOrder(TmsOpenForWoMall.Dto.Request.Union.AddMsg,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            推送新增物流订单消息 
+            </summary>
+            <param name="addMsg">消息实体</param>
+            <param name="context">请求上下文</param>
+            <returns></returns>
+        </member>
+        <member name="T:TmsOpenForWoMall.Domain.Services.UnionService">
+            <summary>
+            联通商场数据实现方法
+            </summary>
+        </member>
+        <member name="M:TmsOpenForWoMall.Domain.Services.UnionService.#ctor(Microsoft.Extensions.Options.IOptionsMonitor{WmsReport.Infrastructure.Config.DbConnections},TmsOpenForWoMall.Infrastructure.DbCommon.IUnionDbConnection)">
+            <summary>
+            创建构造函数
+            </summary>
+            <param name="dbConnsAccessor"></param>
+            <param name="_unDbConnection"></param>
+        </member>
+        <member name="M:TmsOpenForWoMall.Domain.Services.UnionService.GetToken(ProvideForUnionAPI.Dto.Request.ReqTokenDto,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            记录调用获取Access token接口
+            </summary>
+            <param name="reqTokenDto"></param>
+            <param name="httpContext"></param>
+        </member>
+        <member name="M:TmsOpenForWoMall.Domain.Services.UnionService.getOrderPushMsg(TmsOpenForWoMall.Dto.Request.Union.ReqPushMsgDto,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            推送消息
+            </summary>
+            <param name="reqPushMsgDto">消息实体</param>
+            <param name="httpContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TmsOpenForWoMall.Domain.Services.UnionService.GetLogiticOrderByNo(System.String,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            物流单号
+            </summary>
+            <param name="orderNo">物流单号</param>
+            <param name="context">请求上下文 </param>
+            <returns></returns>
+        </member>
+        <member name="M:TmsOpenForWoMall.Domain.Services.UnionService.AddLogiticOrder(TmsOpenForWoMall.Dto.Request.Union.AddMsg,Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            推送新增物流订单消息 
+            </summary>
+            <param name="addMsg">消息实体</param>
+            <param name="context">请求上下文 </param>
+            <returns></returns>
+        </member>
+        <member name="T:TmsOpenForWoMall.Dto.Request.Union.ReqOrderInfoDto">
+            <summary>
+            物流查询接口输入类实体
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.ReqOrderInfoDto.token">
+            <summary>
+            授权时获取的access token
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.ReqOrderInfoDto.method">
+            <summary>
+            queryLogisticsOrderInfo
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.ReqOrderInfoDto.logisticsOrderNo">
+            <summary>
+            物流订单号
+            </summary>
+        </member>
+        <member name="T:TmsOpenForWoMall.Dto.Request.Union.ReqPushMsgDto">
+            <summary>
+            推送新增物流订单消息请求类
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.ReqPushMsgDto.token">
+            <summary>
+            授权时获取的access token
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.ReqPushMsgDto.method">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.ReqPushMsgDto.type">
+            <summary>
+            推送消息类型
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.ReqPushMsgDto.logisticsOrderNo">
+            <summary>
+            物流订单号
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.ReqPushMsgDto.msgInfo">
+            <summary>
+            消息实体
+            </summary>
+        </member>
+        <member name="T:TmsOpenForWoMall.Dto.Request.Union.AddMsg">
+            <summary>
+            消息实体(type=1)
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.AddMsg.logisticsOrderNo">
+            <summary>
+            物流订单号（平台生成）
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.AddMsg.stype">
+            <summary>
+            1-新增物流订单
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.AddMsg.time">
+            <summary>
+            时间 格式：“yyyy-MM-dd HH:mm:ss”
+            </summary>
+        </member>
+        <member name="T:TmsOpenForWoMall.Dto.Request.Union.CfmMsg">
+            <summary>
+            确认消息类
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.CfmMsg.logisticsOrderNo">
+            <summary>
+            物流订单号
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.CfmMsg.stype">
+            <summary>
+            消息类型 1-确认 2-取消
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.CfmMsg.totalPrice">
+            <summary>
+            总价格，stype=1时为必填
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.CfmMsg.eleContractNo">
+            <summary>
+            电子合同编号
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.CfmMsg.time">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="T:TmsOpenForWoMall.Dto.Request.Union.AddExpMsg">
+            <summary>
+            追加费用消息类
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.AddExpMsg.logisticsOrderNo">
+            <summary>
+            物流订单号
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.AddExpMsg.addedExpense">
+            <summary>
+            追加费用金额（空跑费、装卸费、送仓费）
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.AddExpMsg.remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.AddExpMsg.time">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="T:TmsOpenForWoMall.Dto.Request.Union.DelivRejMsg">
+            <summary>
+            妥投驳回消息类
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.DelivRejMsg.logisticsOrderNo">
+            <summary>
+            物流订单号
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.DelivRejMsg.deliveredInfo">
+            <summary>
+            驳回原因
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.DelivRejMsg.deliveredPerson">
+            <summary>
+            驳回人姓名
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.DelivRejMsg.time">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="T:TmsOpenForWoMall.Dto.Request.Union.PriceMsg">
+            <summary>
+            线路价格消息类
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.PriceMsg.routeAgreementNo">
+            <summary>
+            物流商招募入围编号
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.PriceMsg.applyNo">
+            <summary>
+            申请单号
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.PriceMsg.status">
+            <summary>
+            审批结果：0未通过1通过
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.PriceMsg.remark">
+            <summary>
+            未通过审批时的原因
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.PriceMsg.time">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="T:TmsOpenForWoMall.Dto.Request.Union.pactMsg">
+            <summary>
+            追加费用消息类
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.pactMsg.logisticsOrderNo">
+            <summary>
+            物流订单号
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.pactMsg.needEleContract">
+            <summary>
+            是否需要电子合同
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.pactMsg.eleContractNo">
+            <summary>
+            电子合同编号
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Request.Union.pactMsg.time">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="T:TmsOpenForWoMall.Dto.Response.Union.ResOrderInfoDto">
+            <summary>
+            物流查询接口请求返回类
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Response.Union.ResOrderInfoDto.logisticsNo">
+            <summary>
+            物流单号
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Response.Union.ResOrderInfoDto.isDelivered">
+            <summary>
+            是否妥投0否1是
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Response.Union.ResOrderInfoDto.orderTracks">
+            <summary>
+            物流配送信息
+            </summary>
+        </member>
+        <member name="T:TmsOpenForWoMall.Dto.Response.Union.orderTrack">
+            <summary>
+            物流配送实体类
+            </summary>
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Response.Union.orderTrack.msgTime">
+            <summary>
+            操作时间yyyy-MM-dd HH:mm:ss
+            </summary>		
+        </member>
+        <member name="P:TmsOpenForWoMall.Dto.Response.Union.orderTrack.content">
+            <summary>
+            配送内容
+            </summary>	
+        </member>
+        <member name="T:TmsOpenForWoMall.Infrastructure.DbCommon.IUnionDbConnection">
+            <summary>
+            在DbConnection基础上再封装一层，访问联通数据库
+            </summary>
+        </member>
+        <member name="M:TmsOpenForWoMall.Infrastructure.DbCommon.IUnionDbConnection.GetDbConnStr">
+            <summary>
+            获取数据库连接字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:TmsOpenForWoMall.Infrastructure.DbCommon.UnionDbConnection">
+            <summary>
+            在DbConnection基础上再封装一层，访问联通数据库
+            </summary>
+        </member>
+        <member name="M:TmsOpenForWoMall.Infrastructure.DbCommon.UnionDbConnection.#ctor(Microsoft.Extensions.Options.IOptionsMonitor{WmsReport.Infrastructure.Config.DbConnections})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="dbConnsAccessor"></param>
+        </member>
+        <member name="M:TmsOpenForWoMall.Infrastructure.DbCommon.UnionDbConnection.GetDbConnStr">
+            <summary>
+            获取数据库连接字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ProvideForUnionAPI.Dto.Request.ReqTokenDto">
+            <summary>
+            获取Access token请求类
+            </summary>
+        </member>
+        <member name="P:ProvideForUnionAPI.Dto.Request.ReqTokenDto.response_type">
+            <summary>
+            表示授权类型，此处的值固定为"token"
+            </summary>
+        </member>
+        <member name="P:ProvideForUnionAPI.Dto.Request.ReqTokenDto.client_id">
+            <summary>
+            表示客户端的ID (由物流商提供)
+            </summary>
+        </member>
+        <member name="P:ProvideForUnionAPI.Dto.Request.ReqTokenDto.client_secret">
+            <summary>
+            表示客户端secret (由物流商提供)
+            </summary>
+        </member>
+        <member name="P:ProvideForUnionAPI.Dto.Request.ReqTokenDto.corp_id">
+            <summary>
+            表示客户端应用唯一编号（由物流商提供，调用时采用MD5加密传输）
+            </summary>
+        </member>
+        <member name="P:ProvideForUnionAPI.Dto.Request.ReqTokenDto.state">
+            <summary>
+            表示客户端的当前状态
+            </summary>
+        </member>
+        <member name="P:ProvideForUnionAPI.Dto.Request.ReqTokenDto.scope">
+            <summary>
+            表示权限范围
+            </summary>
+        </member>
+        <member name="P:ProvideForUnionAPI.Model.ResTokenDto.access_token">
+            <summary>
+            平台访问授权access_token
+            </summary>
+        </member>
+        <member name="P:ProvideForUnionAPI.Model.ResTokenDto.time">
+            <summary>
+            当前时间
+            </summary>
+        </member>
+        <member name="P:ProvideForUnionAPI.Model.ResTokenDto.expire_in">
+            <summary>
+            access_token的有效时间   
+            </summary>
+        </member>
+        <member name="P:ProvideForUnionAPI.Model.ResTokenDto.state">
+            <summary>
+            如果客户端的请求中包含这个参数，认证服务器的回应也必须一模一样
+            </summary>
+        </member>
+    </members>
+</doc>
